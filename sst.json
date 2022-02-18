@@ -1,0 +1,5 @@
+{
+  "name": "take-brew",
+  "region": "eu-central-1",
+  "main": "stacks/index.ts"
+}
