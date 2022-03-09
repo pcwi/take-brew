@@ -1,5 +1,6 @@
-import MyStack from "./MyStack";
+import BackendStack from "./BackendStack";
 import * as sst from "@serverless-stack/resources";
+import FrontendStack from "./FrontendStack";
 
 export default function main(app: sst.App): void {
   // Set default runtime for all functions
@@ -7,7 +8,8 @@ export default function main(app: sst.App): void {
     runtime: "nodejs14.x"
   });
 
-  new MyStack(app, "my-stack");
+  const backend = new BackendStack(app, "backend");
+  const frontend = new FrontendStack(app, "frontend", {  apiUrl: backend.apiUrl})
 
   // Add more stacks
 }
