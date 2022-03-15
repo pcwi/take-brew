@@ -15,7 +15,7 @@ export default class BackendStack extends sst.Stack {
     // Create a HTTP API
     const api = new sst.Api(this, "Api", {
       routes: {
-        "GET /": "src/lambda.handler",
+        "GET /cards": "src/cards.handler",
       },
       defaultFunctionProps: {
         environment: {

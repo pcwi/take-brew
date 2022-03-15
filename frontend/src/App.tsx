@@ -5,11 +5,11 @@ import './App.css';
 import { BeerCard, CardItem } from './components/BeerCard';
 
 function App() {
-  const apiUrl = process.env.REACT_APP_API_URL!!
+  const cardsApiUrl = process.env.REACT_APP_API_URL!! + "/cards"
   const [items, setItems] = useState([] as CardItem[])
   useEffect(() => {
 
-    fetch(apiUrl)
+    fetch(cardsApiUrl)
       .then(response => response.json())
       .then(json => setItems(json))
     // empty dependency array means this effect will only run once (like componentDidMount in classes)

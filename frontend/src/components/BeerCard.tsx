@@ -24,6 +24,7 @@ export function BeerCard(props: CardItem) {
                         tag="h5">
                         {props.description}
                     </CardText>
+                    <Button color='secondary'>I'll take it (WIP)</Button>
                 </CardBody>
             </div>
         </Card>
